@@ -94,6 +94,10 @@
             android:name=".recycler.DetailAksesorisActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".recycler.DetailFlashActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
     </application>
 
 </manifest>
