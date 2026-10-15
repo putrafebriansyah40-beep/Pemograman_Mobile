@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.widget.HotelActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rawat Inap"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:textSize="24sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No. Register"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:textStyle="bold"
+            android:id="@+id/tvRegis"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="ex.AX123"
+            android:inputType="text"
+            android:id="@+id/etIsiRegis"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nama Lengkap"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:id="@+id/tvNama"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="ex : Febriansyah Putra"
+            android:inputType="text"
+            android:id="@+id/etIsiNama"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NIK"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:id="@+id/tvNik"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="ex 123456789"
+            android:inputType="number"
+            android:id="@+id/etIsiNik"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nomor Telepon"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:id="@+id/tvTlpm"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="ex 08123456789"
+            android:inputType="number"
+            android:id="@+id/etIsiTpln"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tanggal Masuk"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/tvTanggal"
+            android:background="#CDCDCD"
+            app:drawableEndCompat="@drawable/ic_calender"
+            app:drawableTint="#1DFA00"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Waktu"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginStart="10dp"
+            android:background="#CDCDCD"
+            app:drawableEndCompat="@drawable/ic_time"
+            app:drawableTint="#1DFA00"
+            android:id="@+id/tvTime"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kelas Kamar"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            />
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:id="@+id/spnKelasKamar"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kategori Pasien"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:id="@+id/tvTamat"
+            />
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rgkategori"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BPJS"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Non BPJS"
+                android:layout_marginStart="10dp"
+                />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mandiri"
+                android:layout_marginStart="10dp"
+                />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jumlah Hari"
+            android:layout_marginStart="10dp"
+            android:id="@+id/jmlhhari"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="ex 1"
+            android:inputType="number"
+            android:id="@+id/etIsiJlmhHari"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Biaya Tambah"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1"
+            >
+            <TableRow>
+                <CheckBox
+                    android:text="Bed Sofa : Rp.75.000/hari"
+                    android:id="@+id/cbBedSofa"
+                    />
+                <EditText
+                    android:hint="Hari : 1"
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/etBedSofa"
+                    android:inputType="number"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <CheckBox
+                    android:text="Sofa : Rp.65.000/hari"
+                    android:id="@+id/cbSofa"
+                    />
+                <EditText
+                    android:hint="Hari : 1"
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/etSofa"
+                    android:inputType="number"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <CheckBox
+                    android:text="Dispenser : Rp.25.000/hari"
+                    android:id="@+id/cbDispenser"
+                    />
+                <EditText
+                    android:hint="ex: 1"
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/etDispenser"
+                    android:inputType="number"
+                    />
+            </TableRow>
+
+            <TableRow>
+                <CheckBox
+                    android:text="Makanan(Nasi, Sambal) : Rp.45.000/hari"
+                    android:id="@+id/cbMakanan"
+                    />
+                <EditText
+                    android:hint="ex : 1"
+                    android:layout_marginStart="10dp"
+                    android:id="@+id/etMakanan"
+                    android:inputType="number"
+                    />
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/btnSimpan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SIMPAN"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            />
+
+        <!-- TextView BAYAR (Awalnya disembunyikan/Visibility GONE) -->
+        <TextView
+            android:id="@+id/tvLabelBayar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BAYAR"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tvHasil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="20dp"
+            android:textSize="16sp"
+            />
+
+    </LinearLayout>
+
+</ScrollView>

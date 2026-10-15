@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.layout.ConstraintActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="10dp"
+        android:text="BIODATA"
+        android:id="@+id/biodata"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NIM"
+        app:layout_constraintTop_toBottomOf="@id/biodata"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:id="@+id/nim"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=": 2411081030"
+        app:layout_constraintTop_toBottomOf="@id/biodata"
+        app:layout_constraintStart_toEndOf="@id/nim"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="16dp"
+        android:id="@+id/isinim"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nama"
+        app:layout_constraintTop_toBottomOf="@id/nim"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:id="@+id/nama"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=": Febriansyah Putra"
+        app:layout_constraintTop_toBottomOf="@id/isinim"
+        app:layout_constraintStart_toEndOf="@id/nama"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:id="@+id/isinama"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email"
+        app:layout_constraintTop_toBottomOf="@id/nama"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+        android:id="@+id/Email"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=": Febriansyah@gmail.com"
+        app:layout_constraintTop_toBottomOf="@id/isinama"
+        app:layout_constraintStart_toEndOf="@id/Email"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="7dp"
+        android:id="@+id/isiEmail"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
