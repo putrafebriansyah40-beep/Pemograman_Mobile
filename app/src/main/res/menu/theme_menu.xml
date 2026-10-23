@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:title="Standard"
+    android:id="@+id/themeStandard"
+    />
+
+    <item
+        android:title="Silver"
+        android:id="@+id/themeSilver"
+        />
+
+    <item
+        android:title="Retro"
+        android:id="@+id/themeRetro"
+        />
+
+    <item
+        android:title="Dark"
+        android:id="@+id/themeDark"
+        />
+
+    <item
+        android:title="Night"
+        android:id="@+id/themeNight"
+        />
+
+    <item
+        android:title="aubergine"
+        android:id="@+id/themeAubergine"
+        />
+</menu>

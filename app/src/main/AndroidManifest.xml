@@ -16,7 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinBasic3CTRPL">
         <activity
-            android:name=".recycler.AksesorisActivity"
+            android:name=".map.MapsCustomeActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -97,6 +97,44 @@
         <activity
             android:name=".recycler.DetailFlashActivity"
             android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".recycler.AksesorisActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".recycler.DetailGridActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <!--
+             TODO: Before you run your application, you need a Google Maps API key.
+
+             To get one, follow the directions here:
+
+                https://developers.google.com/maps/documentation/android-sdk/get-api-key
+
+             Once you have your API key (it starts with "AIza"), define a new property in your
+             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
+             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCRtYR_G7SJylC5nHgrHN6PHx2nJpUa0jg" />
+
+        <activity
+            android:name=".recycler.GridActivity"
+            android:exported="false"
+            android:label="@string/title_activity_maps"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".map.MapsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_maps_multi_marker"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".map.MapsMultiMarkerActivity"
+            android:exported="false"
+            android:label="@string/title_activity_maps_custome"
             android:windowSoftInputMode="adjustResize" />
     </application>
 

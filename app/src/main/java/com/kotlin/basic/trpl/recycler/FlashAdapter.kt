@@ -29,7 +29,7 @@ class FlashAdapter(
         holder.ivFlash.setImageResource(itemFlash.gambarFlash)
         holder.tvHargaFlash.text = itemFlash.harga
         holder.tvNamaFlash.text = itemFlash.namaFlash
-        holder.tvRatingFlash.text = "⭐ ${itemFlash.rating}"
+        holder.tvRatingFlash.text = itemFlash.rating.toString()
 
         // Menambahkan listener klik
         holder.itemView.setOnClickListener {
