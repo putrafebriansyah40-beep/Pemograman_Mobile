@@ -6,6 +6,9 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.activity.enableEdgeToEdge
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+import com.google.android.gms.common.GoogleApiAvailabilityLight
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -28,6 +31,11 @@ class MapsCustomeActivity : AppCompatActivity(), OnMapReadyCallback {
 
         binding = ActivityMapsCustomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            insets
+        }
 
         setSupportActionBar(binding.tbThemeMap)
 
@@ -48,18 +56,22 @@ class MapsCustomeActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.themeRetro -> {
+                mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
                 setThemeMap(R.raw.retro_map)
                 true
             }
             R.id.themeDark -> {
+                mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
                 setThemeMap(R.raw.dark_map)
                 true
             }
             R.id.themeNight -> {
+                mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
                 setThemeMap(R.raw.night_map)
                 true
             }
             R.id.themeAubergine -> {
+                mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
                 setThemeMap(R.raw.aubergine)
                 true
             }
@@ -70,6 +82,24 @@ class MapsCustomeActivity : AppCompatActivity(), OnMapReadyCallback {
 
     fun setThemeMap(fileJsonTheme: Int){
         mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this,fileJsonTheme))
+    }
+
+    fun tipeMapNormal(){
+        binding.fabNormal.setOnClickListener {
+            mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
+        }
+    }
+
+    fun tipeMapSatellite(){
+        binding.fabSatellite.setOnClickListener {
+            mMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
+        }
+    }
+
+    fun tipeMapTerrain(){
+        binding.fabTerrain.setOnClickListener {
+            mMap.mapType = GoogleMap.MAP_TYPE_TERRAIN
+        }
     }
 
     /**
@@ -121,6 +151,10 @@ class MapsCustomeActivity : AppCompatActivity(), OnMapReadyCallback {
             binding.cvDetail.visibility = View.GONE
         }
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(titikTengah, 12f))
+
+        tipeMapNormal()
+        tipeMapSatellite()
+        tipeMapTerrain()
     }
 
     //buat fungsi untuk menampilkan card view saat marker di klik
