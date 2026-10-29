@@ -1,11 +1,15 @@
 package com.kotlin.basic.trpl.map
 
+import android.Manifest
+import android.content.pm.PackageManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.activity.enableEdgeToEdge
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.gms.common.GoogleApiAvailabilityLight
@@ -49,56 +53,74 @@ class MapsCustomeActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.theme_menu,menu)
+        menuInflater.inflate(R.menu.theme_menu, menu)
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
+        return when (item.itemId) {
             R.id.themeRetro -> {
                 mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
                 setThemeMap(R.raw.retro_map)
                 true
             }
+
             R.id.themeDark -> {
                 mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
                 setThemeMap(R.raw.dark_map)
                 true
             }
+
             R.id.themeNight -> {
                 mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
                 setThemeMap(R.raw.night_map)
                 true
             }
+
             R.id.themeAubergine -> {
                 mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
                 setThemeMap(R.raw.aubergine)
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
 
     }
 
-    fun setThemeMap(fileJsonTheme: Int){
-        mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this,fileJsonTheme))
+    fun setThemeMap(fileJsonTheme: Int) {
+        mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, fileJsonTheme))
     }
 
-    fun tipeMapNormal(){
+    fun tipeMapNormal() {
         binding.fabNormal.setOnClickListener {
             mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
         }
     }
 
-    fun tipeMapSatellite(){
+    fun tipeMapSatellite() {
         binding.fabSatellite.setOnClickListener {
             mMap.mapType = GoogleMap.MAP_TYPE_SATELLITE
         }
     }
 
-    fun tipeMapTerrain(){
+    fun tipeMapTerrain() {
         binding.fabTerrain.setOnClickListener {
             mMap.mapType = GoogleMap.MAP_TYPE_TERRAIN
+        }
+    }
+
+    fun myLocation() {
+        if (ContextCompat.checkSelfPermission(
+                this, Manifest.permission.ACCESS_FINE_LOCATION
+            ) == PackageManager.PERMISSION_GRANTED
+        ){
+            mMap.isMyLocationEnabled = true
+        }else{
+            ActivityCompat.requestPermissions(
+                this, arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
+                1
+            )
         }
     }
 
@@ -113,6 +135,8 @@ class MapsCustomeActivity : AppCompatActivity(), OnMapReadyCallback {
      */
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
+
+        myLocation()
 
         val listHotel = listOf<HotelModel>(
             HotelModel(
@@ -134,7 +158,7 @@ class MapsCustomeActivity : AppCompatActivity(), OnMapReadyCallback {
         )
 
         val titikTengah = LatLng(-0.9450442214288309, 100.36228013469467)
-        for (i in listHotel){
+        for (i in listHotel) {
             val marker = mMap.addMarker(MarkerOptions().position(i.koordinat))
             //simpan data marker dalam tag
             marker?.tag = i
@@ -142,7 +166,7 @@ class MapsCustomeActivity : AppCompatActivity(), OnMapReadyCallback {
         //saat marker diklik
         mMap.setOnMarkerClickListener { marker ->
             val itemHotel = marker.tag as? HotelModel
-            if (itemHotel != null){
+            if (itemHotel != null) {
                 showMarkerDetail(itemHotel)
             }
             true
@@ -158,7 +182,7 @@ class MapsCustomeActivity : AppCompatActivity(), OnMapReadyCallback {
     }
 
     //buat fungsi untuk menampilkan card view saat marker di klik
-    fun showMarkerDetail(hotelModel: HotelModel){
+    fun showMarkerDetail(hotelModel: HotelModel) {
         binding.tvNamaTempat.text = hotelModel.namaTempat
         binding.tvAlamat.text = hotelModel.alamat
         binding.rbHotel.rating = hotelModel.rating

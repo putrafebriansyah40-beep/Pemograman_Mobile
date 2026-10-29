@@ -5,6 +5,7 @@
     <!-- Izin Akses -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.KotlinBasic3CTRPL">
         <activity
-            android:name=".map.MapsCustomeActivity"
+            android:name=".api.ProductActivity"
             android:exported="true"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
@@ -25,6 +26,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".api.DetailProductActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".api.MealCategoryActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MainActivity"
             android:exported="false"
@@ -135,6 +144,10 @@
             android:name=".map.MapsMultiMarkerActivity"
             android:exported="false"
             android:label="@string/title_activity_maps_custome"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".map.MapsCustomeActivity"
+            android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
 
